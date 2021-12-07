@@ -5,9 +5,9 @@ declare class RBush<G extends Geometry, P extends GeoJsonProperties> {
     load(features: FeatureCollection<G, P> | Feature<G, P>[]): RBush<G, P>;
     remove(feature: Feature<G, P>, equals?: (a: Feature<G, P>, b: Feature<G, P>) => boolean): RBush<G, P>;
     clear(): RBush<G, P>;
-    search(geojson: Feature<G, P> | FeatureCollection<G, P> | BBox): FeatureCollection<G, P>;
+    search(geojson: Feature | FeatureCollection | BBox): FeatureCollection<G, P>;
     all(): FeatureCollection<any>;
-    collides(geosjon: Feature<G, P> | FeatureCollection<G, P> | BBox): boolean;
+    collides(geosjon: Feature | FeatureCollection | BBox): boolean;
     toJSON(): any;
     fromJSON(data: any): RBush<G, P>;
 }

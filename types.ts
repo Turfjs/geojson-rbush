@@ -1,4 +1,4 @@
-import { point, polygon, featureCollection } from '@turf/helpers'
+import { point, polygon, featureCollection, Point, Polygon } from '@turf/helpers'
 import { BBox } from 'geojson'
 import rbush from './'
 
@@ -10,7 +10,7 @@ const poly = polygon([[[0, 0], [1, 1], [1, 1], [0, 0]]])
 const polygons = featureCollection([poly, poly])
 
 // Initialize GeoJSON RBush Tree
-const tree = rbush()
+const tree = rbush<Point | Polygon>()
 
 // Load Tree with a FeatureCollection
 tree.load(points);
